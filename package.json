@@ -1,0 +1,40 @@
+{
+    "name": "dota2-ti10-schedule-scraper",
+    "version": "1.0.0",
+    "description": "A puppeteer based web scraper for Dota2 TI-10 event schedule",
+    "main": "index.js",
+    "bin": {
+        "dota2-ti10-scraper": "index.js"
+    },
+    "scripts": {
+        "fetch": "node index.js --output-dir ./schedules"
+    },
+    "author": "paulbennetjoshua@gmail.com",
+    "license": "GPL-3.0-or-later",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/paulbennet/dota2-ti10-schedule-scraper.git"
+    },
+    "dependencies": {
+        "commander": "^8.1.0",
+        "date-fns": "^2.25.0",
+        "fs-extra": "^10.0.0",
+        "ical-generator": "^3.0.1",
+        "puppeteer": "^10.1.0"
+    },
+    "devDependencies": {
+        "eslint": "^7.31.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^5.1.0"
+    },
+    "keywords": [
+        "dota2",
+        "ti10",
+        "2021",
+        "puppeteer",
+        "scrape",
+        "webscraper"
+    ]
+}

@@ -1,6 +1,6 @@
 {
     "name": "dota2-ti10-schedule-scraper",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A puppeteer based web scraper for Dota2 TI-10 event schedule",
     "main": "index.js",
     "bin": {

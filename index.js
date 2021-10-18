@@ -112,9 +112,9 @@ const fetchSchedulesData = async () => {
       //   return $('<a />').attr('href', relURL)[0].href
       // }
 
-      // const sanitizeText = (text = '') => {
-      //   return text.replace(/\n/gmi, '')
-      // }
+      const sanitizeText = (text = '') => {
+        return text.replace(/\n/gmi, '')
+      }
 
       const findElements = (className, targetDOM = document.body) => {
         const elements = targetDOM.querySelectorAll(`[class*=${className}]`)
@@ -172,25 +172,25 @@ const fetchSchedulesData = async () => {
         const teams = []
 
         teams.push({
-          id: teamIDs[0],
+          id: sanitizeText(teamIDs[0]),
           // logo: teamLogos[0],
-          name: teamNames[0],
-          score: scores[0]
+          name: sanitizeText(teamNames[0]),
+          score: sanitizeText(scores[0])
         })
 
         teams.push({
-          id: teamIDs[1],
+          id: sanitizeText(teamIDs[1]),
           // logo: teamLogos[1],
-          name: teamNames[1],
-          score: scores[1]
+          name: sanitizeText(teamNames[1]),
+          score: sanitizeText(scores[1])
         })
 
         seriesTime = new Date(parseInt(seriesTime))
 
         series.push({
-          title: seriesTitle,
-          type: seriesType,
-          time: seriesTime.toISOString(),
+          title: sanitizeText(seriesTitle),
+          type: sanitizeText(seriesType),
+          time: sanitizeText(seriesTime.toISOString()),
           // timezoneOffset,
           teams
         })
@@ -303,11 +303,11 @@ const saveScheduleToICal = async ({ schedules = [], outputDir = null }) => {
       // timezone: scheduleTimezone,
       start: startTime.toISOString(),
       end: endTime.toISOString(),
-      summary: title,
-      x: [{
-        key: 'X-CONTESTANTS',
-        value: JSON.stringify(series.teams)
-      }]
+      summary: title
+      // x: [{
+      //   key: 'X-CONTESTANTS',
+      //   value: JSON.stringify(series.teams)
+      // }]
     })
   }
 
